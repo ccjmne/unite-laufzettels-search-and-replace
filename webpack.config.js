@@ -54,15 +54,16 @@ module.exports = {
       raw: true,
       entryOnly: true,
       banner: `
-      // ==UserScript==
-      // @name         Replace text in Laufzettels
-      // @namespace    http://tampermonkey.net/
-      // @version      ${version}
-      // @author       Eric NICOLAS (ccjmne) <ccjmne@gmail.com>
-      // @match        https://backoffice.intern.mercateo.com/prototype.tgui.server/
-      // @icon         https://www.google.com/s2/favicons?sz=64&domain=mercateo.com
-      // @grant        none
-      // ==/UserScript==`,
+// ==UserScript==
+// @name         Replace text in Laufzettels
+// @namespace    http://tampermonkey.net/
+// @version      ${version}
+// @author       Eric NICOLAS (ccjmne) <ccjmne@gmail.com>
+// @match        https://backoffice.intern.mercateo.com/prototype.tgui.server/
+// @icon         https://www.google.com/s2/favicons?sz=64&domain=mercateo.com
+// @grant        none
+// ==/UserScript==
+`,
     }),
   ],
 }
