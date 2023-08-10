@@ -56,7 +56,7 @@ module.exports = {
       // @name         Replace text in Laufzettels
       // @namespace    http://tampermonkey.net/
       // @version      1.0
-      // @author       Eric NICOLAS <eric.nicolas@unite.eu>
+      // @author       Eric NICOLAS (ccjmne) <ccjmne@gmail.com>
       // @match        https://backoffice.intern.mercateo.com/prototype.tgui.server/
       // @icon         https://www.google.com/s2/favicons?sz=64&domain=mercateo.com
       // @grant        none
