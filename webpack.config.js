@@ -46,8 +46,8 @@ module.exports = {
     extensions: ['.tsx', '.ts', '.js'],
   },
   output: {
-    filename: 'bundle.js',
-    path: path.resolve(__dirname, 'dist'),
+    filename: 'search-and-replace.user.js',
+    path: path.resolve(__dirname, 'userscripts'),
   },
   plugins: [
     new BannerPlugin({
