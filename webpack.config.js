@@ -1,6 +1,33 @@
+/* eslint-disable */
 const path = require('path')
 
 const webpack = require('webpack')
+
+// The built-in webpack.BannerPlugin somehow doesn't output the banner in production mode.
+// See https://github.com/webpack/webpack/issues/6630
+// Credit: https://github.com/webpack/webpack-cli/issues/312#issuecomment-732749280
+class BannerPlugin {
+
+  constructor(options) {
+    this.banner = options.banner
+  }
+
+  apply(compiler) {
+    compiler.hooks.emit.tapAsync('FileListPlugin', (compilation, callback) => {
+      compilation.chunks.forEach(chunk => {
+        chunk.files.forEach(filename => {
+          const asset = compilation.assets[filename]
+          asset._value = this.banner + asset._value
+        })
+      })
+
+      callback()
+    })
+  }
+
+}
+
+/* eslint-enable */
 
 module.exports = {
   entry: './max-len.ts',
@@ -21,7 +48,7 @@ module.exports = {
     path: path.resolve(__dirname, 'dist'),
   },
   plugins: [
-    new webpack.BannerPlugin({
+    new BannerPlugin({
       raw: true,
       entryOnly: true,
       banner: `
