@@ -1,0 +1,32 @@
+{
+  "compileOnSave": true,
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "*": ["./node_modules/@types/*", "./src/*"],
+      "src/*": ["./src/*"]
+    },
+    "moduleResolution": "Node",
+    "module": "ESNext",
+    "target": "ESNext",
+    "outDir": "./dist/out-tsc",
+    "sourceMap": true,
+    "incremental": true,
+    "importHelpers": true,
+    "noImplicitAny": false,
+    "esModuleInterop": true,
+    "strictNullChecks": true,
+    "resolveJsonModule": true,
+    "preserveConstEnums": true,
+    "allowSyntheticDefaultImports": true,
+    "lib": ["DOM", "ESNext"],
+    "typeRoots": ["src/*.d.ts", "node_modules/@types"]
+  },
+  "ts-node": {
+    "compilerOptions": {
+      "module": "CommonJS"
+    }
+  },
+  "include": [".eslintrc.js", "**/*"],
+  "exclude": ["node_modules", "dist"]
+}
